@@ -1,12 +1,12 @@
 {
   "name": "vsftpd",
-  "version": "1.0.0",
-  "author": "yourname",
-  "summary": "Puppet module to install and configure vsftpd.",
+  "version": "2.0.0",
+  "author": "lvw5264",
+  "summary": "Puppet module to install and configure vsftpd. Best to use existing vsftpd modules like simp-vsftpd, this is more of an example to demonstrate conversion of a traditional Puppet 2 module to Puppet 6 hieradata.",
   "license": "Apache-2.0",
-  "source": "https://github.com/yourusername/vsftpd",
-  "project_page": "https://github.com/yourusername/vsftpd",
-  "issues_url": "https://github.com/yourusername/vsftpd/issues",
+  "source": "https://github.com/lvw5264/vsftpd",
+  "project_page": "https://github.com/lvw5264/vsftpd",
+  "issues_url": "https://github.com/lvw5264/vsftpd/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",

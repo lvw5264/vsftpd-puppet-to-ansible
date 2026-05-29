@@ -1,0 +1,19 @@
+namespace: lvw5264
+name: vsftpd
+version: 2.0.0
+readme: README.md
+authors:
+  - lvw5264
+description: Ansible collection to install and configure vsftpd
+license:
+  - Apache-2.0
+tags:
+  - ftp
+  - vsftpd
+  - networking
+dependencies: {}
+repository: https://github.com/lvw5264/vsftpd
+documentation: https://github.com/lvw5264/vsftpd
+homepage: https://github.com/lvw5264/vsftpd
+issues: https://github.com/lvw5264/vsftpd/issues
+build_ignore: []

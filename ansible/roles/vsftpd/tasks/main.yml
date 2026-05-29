@@ -1,0 +1,44 @@
+---
+- name: Ensure vsftpd is {{ vsftpd_ensure }}
+  block:
+    - name: Uninstall vsftpd
+      when: vsftpd_ensure == 'absent'
+      block:
+        - name: Stop and disable vsftpd service
+          service:
+            name: "{{ vsftpd_service_name }}"
+            state: stopped
+            enabled: false
+
+        - name: Remove vsftpd config file
+          file:
+            path: "{{ vsftpd_config_path }}"
+            state: absent
+
+        - name: Uninstall vsftpd package
+          package:
+            name: "{{ vsftpd_package_name }}"
+            state: absent
+
+    - name: Install vsftpd
+      when: vsftpd_ensure == 'present'
+      block:
+        - name: Install vsftpd package
+          package:
+            name: "{{ vsftpd_package_name }}"
+            state: present
+
+        - name: Configure vsftpd
+          template:
+            src: vsftpd.conf.j2
+            dest: "{{ vsftpd_config_path }}"
+            owner: root
+            group: root
+            mode: '0644'
+          notify: restart vsftpd
+
+        - name: Ensure vsftpd service is running
+          service:
+            name: "{{ vsftpd_service_name }}"
+            state: "{{ vsftpd_service_state }}"
+            enabled: "{{ vsftpd_service_enabled }}"

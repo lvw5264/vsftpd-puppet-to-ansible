@@ -1,0 +1,22 @@
+---
+vsftpd_ensure: present
+vsftpd_package_name: vsftpd
+vsftpd_config_path: /etc/vsftpd.conf
+vsftpd_service_name: vsftpd
+vsftpd_service_state: started
+vsftpd_service_enabled: true
+vsftpd_anonymous_enable: false
+vsftpd_local_enable: true
+vsftpd_write_enable: true
+vsftpd_local_umask: '022'
+vsftpd_dirmessage_enable: true
+vsftpd_use_localtime: true
+vsftpd_xferlog_enable: true
+vsftpd_connect_from_port_20: true
+vsftpd_chroot_local_user: true
+vsftpd_secure_chroot_dir: /var/run/vsftpd/empty
+vsftpd_pam_service_name: vsftpd
+vsftpd_ssl_enable: false
+vsftpd_ssl_ciphers: HIGH
+vsftpd_rsa_cert_file: null
+vsftpd_rsa_private_key_file: null
